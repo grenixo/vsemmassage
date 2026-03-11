@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VSEMMASSAGE — Студия массажа в СПб</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">О студии</a>
+  <a href="services.html" onclick="closeMenu()">Услуги</a>
+  <a href="#reviews" onclick="closeMenu()">Отзывы</a>
+  <a href="#contacts" onclick="closeMenu()">Контакты</a>
+  <a href="https://beauty.dikidi.net/#widget=152256" target="_blank" class="mobile-cta" onclick="closeMenu()">Записаться</a>
+  <div class="mobile-contact">+7 996 783-77-02</div>
+</div>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-sticky">
+  <a href="tel:+79967837702" class="sticky-call">Позвонить</a>
+  <a href="https://beauty.dikidi.net/#widget=152256" target="_blank" class="sticky-book">Записаться</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">Vsemmassage</a>
+  <ul class="nav-links">
+    <li><a href="#about">О студии</a></li>
+    <li><a href="services.html">Услуги</a></li>
+    <li><a href="#reviews">Отзывы</a></li>
+    <li><a href="#contacts">Контакты</a></li>
+    <li><a href="https://beauty.dikidi.net/#widget=152256" target="_blank" class="nav-cta">Записаться</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburger');
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+</script>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow"><span class="deco-line"></span>Студия массажа в Санкт-Петербурге</div>
+    <h1 class="hero-title">
+      Забота о теле —<br>
+      <em>настоящая</em><br>
+      и профессиональная
+    </h1>
+    <p class="hero-desc">
+      Индивидуальный подход, медицинское образование и более 5 лет опыта. Массаж, который действительно работает.
+    </p>
+    <div class="hero-actions">
+      <a href="https://beauty.dikidi.net/#widget=152256" target="_blank" class="btn-primary">Записаться на сеанс</a>
+      <a href="services.html" class="btn-ghost">Узнать об услугах →</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Лет опыта</div>
+      </div>
+      <div>
+        <div class="stat-num">11</div>
+        <div class="stat-label">Видов массажа</div>
+      </div>
+      <div>
+        <div class="stat-num">800₽</div>
+        <div class="stat-label">От — цена сеанса</div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">Прокрутите</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-img-wrap"></div>
+
+    <div class="hero-photo-label">
+      <div class="name">Вера Смирнова</div>
+      <div class="title">Массажный мастер · Медицинское образование</div>
+    </div>
+
+    <div class="hero-badge">
+      <span>СПб · Орлово-Денисовский · Уют · Качество</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="about">
+  <div>
+    <div class="why-label"><span class="deco-line"></span>Почему я</div>
+    <h2 class="why-heading">То, что <em>отличает</em> меня</h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-item">
+      <span class="why-icon">🎓</span>
+      <h3>Медицинское образование</h3>
+      <p>Понимаю анатомию и физиологию. Работаю не по шаблону, а с пониманием того, что происходит в вашем теле.</p>
+    </div>
+    <div class="why-item">
+      <span class="why-icon">🤲</span>
+      <h3>Работа на результат</h3>
+      <p>Не просто расслабление — реальное улучшение самочувствия. Уходят боли, спазмы, усталость.</p>
+    </div>
+    <div class="why-item">
+      <span class="why-icon">✨</span>
+      <h3>Уют и чистота</h3>
+      <p>Тихое, уютное пространство только для вас. Никаких очередей и суеты.</p>
+    </div>
+    <div class="why-item">
+      <span class="why-icon">💛</span>
+      <h3>Индивидуальный подход</h3>
+      <p>Слушаю каждого клиента. Учитываю ваши особенности, пожелания и состояние здоровья.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <div>
+      <div class="section-eyebrow"><span class="deco-line"></span>Услуги</div>
+      <h2 class="section-title">Выберите<br>свой массаж</h2>
+    </div>
+    <a href="services.html" class="btn-ghost">Все услуги →</a>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-name">Общий массаж тела</div>
+      <div class="service-desc">Снимает боль и напряжение, улучшает кровообращение, восстанавливает силы.</div>
+      <div class="service-footer">
+        <div class="service-price">от 3 000 ₽</div>
+        <div class="service-duration">60–90 мин</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-name">Массаж спины и шеи</div>
+      <div class="service-desc">Уберёт боль в пояснице, улучшит осанку. Особенно актуален при сидячей работе.</div>
+      <div class="service-footer">
+        <div class="service-price">от 800 ₽</div>
+        <div class="service-duration">30–40 мин</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-name">Миофасциальный массаж</div>
+      <div class="service-desc">Работа с триггерными точками — убирает хронические боли и напряжение в мышцах.</div>
+      <div class="service-footer">
+        <div class="service-price">3 700 ₽</div>
+        <div class="service-duration">60 мин</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">04</div>
+      <div class="service-name">Японский массаж Кобидо</div>
+      <div class="service-desc">Естественное омоложение лица без инъекций. Улучшает тонус кожи и цвет лица.</div>
+      <div class="service-footer">
+        <div class="service-price">2 600 ₽</div>
+        <div class="service-duration">60 мин</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">05</div>
+      <div class="service-name">Лимфодренажный массаж</div>
+      <div class="service-desc">Уменьшает отёки, выводит токсины, улучшает состояние кожи и общий тонус.</div>
+      <div class="service-footer">
+        <div class="service-price">3 000 ₽</div>
+        <div class="service-duration">60 мин</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">06</div>
+      <div class="service-name">Детский массаж</div>
+      <div class="service-desc">Мягкое лечебное воздействие на всё тело ребёнка. Укрепляет мышцы, улучшает сон.</div>
+      <div class="service-footer">
+        <div class="service-price">от 700 ₽</div>
+        <div class="service-duration">30–40 мин</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MASTER -->
+<section class="master">
+  <div style="position:relative; display:inline-block;">
+    <div class="master-photo-frame"></div>
+    <div class="master-photo"></div>
+  </div>
+  <div class="master-content">
+    <div class="section-eyebrow"><span class="deco-line"></span>О мастере</div>
+    <blockquote class="master-quote">
+      Работаю с душой — чтобы каждый клиент уходил легче, чем пришёл
+    </blockquote>
+    <p class="master-bio">
+      Меня зовут Вера Смирнова. Я массажный мастер с медицинским образованием. За годы практики я убедилась: хороший массаж — это не просто приятная процедура, это работа с телом, которое умеет восстанавливаться, если ему помочь правильно.
+      <br><br>
+      Принимаю в уютной студии на Орлово-Денисовском проспекте, в шаговой доступности от ЖК Орловский парк, Новоорловский, Френдс и Окла.
+    </p>
+    <div class="master-credentials">
+      <div class="credential">
+        <div class="credential-num">5+</div>
+        <div class="credential-label">Лет опыта</div>
+      </div>
+      <div class="credential">
+        <div class="credential-num">11</div>
+        <div class="credential-label">Видов массажа</div>
+      </div>
+      <div class="credential">
+        <div class="credential-num">★ 5.0</div>
+        <div class="credential-label">Рейтинг</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-header">
+    <div>
+      <div class="section-eyebrow" style="color:var(--terracotta-light)"><span class="deco-line"></span>Отзывы</div>
+      <h2 class="reviews-heading" style="color:white;">Что говорят<br>клиенты</h2>
+    </div>
+  </div>
+  <div class="reviews-scroll">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">На массаж к Вере хожу раз в неделю и не перестаю благодарить — болела шея и поясница, но после сеансов всё прошло. Очень приятная атмосфера, все пожелания учитываются.</div>
+      <div class="review-author">Екатерина · постоянный клиент</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">Пришла с болью в мышцах спины — после массажа боль ушла и появилась лёгкость. У Веры мягкие и сильные руки. Однозначно рекомендую!</div>
+      <div class="review-author">Tiabaldu · клиент</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">С виду хрупкая девушка, не ожидал, что ещё сутки буду чувствовать лёгкость и приятные ощущения во всём теле. Однозначно буду ходить ещё.</div>
+      <div class="review-author">Евгений · клиент</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">Обратился с больной спиной. Я не представлял, насколько можно почувствовать себя легче — хочется выпрямиться и идти вприпрыжку. Точно ещё приду.</div>
+      <div class="review-author">Максим · клиент</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contacts">
+  <div>
+    <h2 class="cta-heading">Запишитесь<br>на <em>первый</em><br>сеанс</h2>
+  </div>
+  <div>
+    <div class="cta-form">
+      <input class="form-input" type="text" placeholder="Ваше имя">
+      <input class="form-input" type="tel" placeholder="Номер телефона">
+      <button class="btn-white">Перезвоните мне</button>
+    </div>
+    <p class="cta-note">Я свяжусь с вами в течение 30 минут в рабочее время.<br>Пн–Сб: 09:00 – 21:00</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <a href="index.html" class="footer-logo">Vsemmassage</a>
+    <p class="footer-tagline">Профессиональный массаж в уютной студии на севере Санкт-Петербурга. Работаю с душой на результат.</p>
+  </div>
+  <div>
+    <div class="footer-col-title">Навигация</div>
+    <ul class="footer-links">
+      <li><a href="#about">О студии</a></li>
+      <li><a href="services.html">Услуги</a></li>
+      <li><a href="#reviews">Отзывы</a></li>
+      <li><a href="https://yandex.ru/maps/?text=Санкт-Петербург%2C+Орлово-Денисовский+пр.+19+корп.+1" target="_blank">Как добраться</a></li>
+      <li><a href="https://beauty.dikidi.net/#widget=152256" target="_blank">Подарочный сертификат</a></li>
+    </ul>
+  </div>
+  <div>
+    <div class="footer-col-title">Контакты</div>
+    <div class="footer-contact-item"><a href="tel:+79967837702">+7 996 783-77-02</a></div>
+    <div class="footer-contact-item"><a href="mailto:vera.massagespb@gmail.com">vera.massagespb@gmail.com</a></div>
+    <div class="footer-contact-item">Орлово-Денисовский пр., 19 корп. 1, подъезд 7, этаж 9</div>
+    <div class="footer-contact-item">Пн–Сб: 09:00 – 21:00</div>
+    <div class="footer-contact-item" style="margin-top:16px;display:flex;gap:16px;">
+      <a href="https://vk.com/vera.massagespb" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">ВКонтакте</a>
+      <a href="https://t.me/massazhspb2022" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:15px;transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Telegram</a>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span class="footer-copy">© 2025 Vsemmassage · Санкт-Петербург</span>
+  <div style="display:flex;gap:20px;">
+    <a href="https://vk.com/vera.massagespb" target="_blank" style="font-size:12px;color:rgba(255,255,255,0.3);text-decoration:none;letter-spacing:0.1em;">ВКонтакте</a>
+    <a href="https://t.me/massazhspb2022" target="_blank" style="font-size:12px;color:rgba(255,255,255,0.3);text-decoration:none;letter-spacing:0.1em;">Telegram</a>
+  </div>
+</div>
+
+</body>
+</html>
