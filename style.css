@@ -446,7 +446,7 @@ footer {
 
 .hero-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(65px, 6.5vw, 101px);
+  font-size: clamp(48px, 5vw, 76px);
   font-weight: 300;
   line-height: 1.1;
   color: var(--dark);
@@ -490,8 +490,8 @@ footer {
 }
 
 .stat-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 47px;
+  font-family: 'Jost', sans-serif;
+  font-size: 32px;
   font-weight: 300;
   color: var(--terracotta);
   line-height: 1;
