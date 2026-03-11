@@ -39,7 +39,7 @@ body::before {
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 100;
+  z-index: 200;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -139,7 +139,7 @@ nav {
 
 .mobile-menu a {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 300;
   color: var(--dark);
   text-decoration: none;
@@ -176,17 +176,19 @@ nav {
   position: fixed;
   bottom: 0; left: 0; right: 0;
   z-index: 90;
-  padding: 7px 16px;
+  padding: 10px 16px;
   background: rgba(250,247,242,0.95);
   backdrop-filter: blur(12px);
   border-top: 1px solid var(--sand);
-  gap: 10px;
+  gap: 40px;
+  justify-content: center;
 }
 
 .mobile-sticky a {
-  flex: 1;
-  text-align: center;
-  padding: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 28px;
   border-radius: 2px;
   font-size: 12px;
   font-weight: 500;
@@ -282,7 +284,7 @@ nav {
 
 .cta-heading {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 65px;
+  font-size: 60px;
   font-weight: 300;
   color: white;
   line-height: 1.15;
@@ -393,6 +395,38 @@ footer {
   letter-spacing: 0.08em;
 }
 
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-social a {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-social a:hover { color: white; }
+
+.footer-bottom-social a {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+}
+
+.footer-bottom-social a:hover { color: rgba(255,255,255,0.7); }
+
+.footer-bottom-social {
+  display: flex;
+  gap: 20px;
+}
+
+.deco-line-light { background: var(--terracotta-light); }
+
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -402,6 +436,13 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes kenBurns {
+  0%   { transform: scale(1)    translate(0,    0);    }
+  33%  { transform: scale(1.06) translate(-1%,  -0.5%); }
+  66%  { transform: scale(1.04) translate(0.5%, -1%);  }
+  100% { transform: scale(1)    translate(0,    0);    }
 }
 
 @keyframes spin {
@@ -516,28 +557,16 @@ footer {
 .hero-img-wrap {
   position: absolute;
   inset: 0;
+  background: url('/images/vsemmassage-inside.webp') center/cover no-repeat;
   opacity: 0;
-  animation: fadeIn 1.2s 0.3s forwards;
+  animation: fadeIn 1.5s 0.3s forwards, kenBurns 18s 1.8s ease-in-out infinite;
 }
 
 .hero-img-wrap::before {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 60% 40%, rgba(196,114,74,0.15) 0%, transparent 60%),
-    linear-gradient(160deg, #D4B99A 0%, #B8926E 30%, #8B6250 60%, #5C3D2E 100%);
-}
-
-.hero-img-wrap::after {
-  content: '✦';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 134px;
-  color: rgba(255,255,255,0.08);
-  letter-spacing: -0.05em;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 100%);
 }
 
 .hero-photo-label {
@@ -624,7 +653,7 @@ footer {
 
 .why-heading {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 54px;
+  font-size: 60px;
   font-weight: 300;
   color: white;
   line-height: 1.2;
@@ -654,14 +683,14 @@ footer {
 
 .why-item h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 400;
   color: white;
   margin-bottom: 10px;
 }
 
 .why-item p {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 300;
   line-height: 1.8;
   color: rgba(255,255,255,0.5);
@@ -736,7 +765,7 @@ footer {
 
 .service-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 27px;
+  font-size: 30px;
   font-weight: 400;
   color: var(--dark);
   margin-bottom: 10px;
@@ -744,7 +773,7 @@ footer {
 }
 
 .service-desc {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   line-height: 1.7;
   color: var(--muted);
@@ -761,7 +790,7 @@ footer {
 }
 
 .service-price {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Jost', sans-serif;
   font-size: 25px;
   font-weight: 300;
   color: var(--terracotta);
@@ -800,6 +829,11 @@ footer {
   background: radial-gradient(ellipse at 40% 30%, rgba(255,220,180,0.3) 0%, transparent 60%);
 }
 
+.master-photo-wrap {
+  position: relative;
+  display: inline-block;
+}
+
 .master-photo-frame {
   position: absolute;
   top: -16px;
@@ -834,10 +868,10 @@ footer {
 
 .master-credentials { display: flex; gap: 32px; }
 
-.credential { display: flex; flex-direction: column; }
+.credential { display: flex; flex-direction: column; flex: 1; }
 
 .credential-num {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Jost', sans-serif;
   font-size: 52px;
   font-weight: 300;
   color: var(--terracotta);
@@ -866,6 +900,8 @@ footer {
   margin-bottom: 60px;
 }
 
+.reviews-eyebrow { color: var(--terracotta-light); }
+
 .reviews-heading {
   font-family: 'Cormorant Garamond', serif;
   font-size: 60px;
@@ -874,22 +910,16 @@ footer {
 }
 
 .reviews-scroll {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding-bottom: 8px;
 }
 
-.reviews-scroll::-webkit-scrollbar { display: none; }
-
 .review-card {
-  min-width: 360px;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.08);
   padding: 36px;
   border-radius: 2px;
-  flex-shrink: 0;
   transition: background 0.3s;
 }
 
@@ -899,6 +929,9 @@ footer {
   display: flex;
   gap: 4px;
   margin-bottom: 20px;
+  color: #f0c060;
+  font-size: 18px;
+  letter-spacing: 2px;
 }
 
 .review-stars span { color: var(--terracotta-light); font-size: 16px; }
@@ -998,7 +1031,7 @@ footer {
 
 .category-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 44px;
+  font-size: 60px;
   font-weight: 300;
   color: var(--dark);
   margin-bottom: 40px;
@@ -1024,22 +1057,22 @@ footer {
 
 .service-row-num {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
+  font-size: 22px;
   font-style: italic;
   color: var(--muted);
-  min-width: 28px;
+  min-width: 36px;
 }
 
 .service-row-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 400;
   color: var(--dark);
   margin-bottom: 6px;
 }
 
 .service-row-desc {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 300;
   color: var(--muted);
   line-height: 1.6;
@@ -1052,7 +1085,7 @@ footer {
 }
 
 .service-row-price {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Jost', sans-serif;
   font-size: 30px;
   font-weight: 300;
   color: var(--terracotta);
@@ -1098,7 +1131,7 @@ footer {
 
 .gift-banner-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 42px;
+  font-size: 60px;
   font-weight: 300;
   color: white;
   line-height: 1.2;
@@ -1107,7 +1140,7 @@ footer {
 .gift-banner-title em { font-style: italic; color: var(--terracotta-light); }
 
 .gift-banner-desc {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   color: rgba(255,255,255,0.5);
   margin-top: 12px;
@@ -1132,6 +1165,7 @@ footer {
   /* NAV */
   nav { padding: 18px 24px; }
   .nav-links { display: none; }
+  .why, .services, .reviews, .cta { scroll-margin-top: 70px; }
   .hamburger { display: flex; }
   .mobile-menu { display: flex; }
   .mobile-sticky { display: flex; }
@@ -1170,6 +1204,8 @@ footer {
 
   .hero-title { font-size: 48px; }
 
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+
   .hero-stats { gap: 24px; flex-wrap: wrap; }
 
   .stat-num { font-size: 36px; }
@@ -1186,7 +1222,7 @@ footer {
     padding: 64px 24px;
   }
 
-  .why-heading { font-size: 40px; }
+  .why-heading { font-size: 45px; }
   .why-grid { grid-template-columns: 1fr; gap: 28px; }
 
   .services { padding: 64px 24px 80px; }
@@ -1211,10 +1247,10 @@ footer {
   .master-photo-frame { display: none; }
   .master-quote { font-size: 31px; }
 
-  .reviews { padding: 64px 0 64px 24px; }
-  .reviews-header { padding-right: 24px; }
+  .reviews { padding: 64px 24px; }
   .reviews-heading { font-size: 45px; }
-  .review-card { min-width: 300px; }
+  .reviews-scroll { grid-template-columns: 1fr; }
+  .review-card { }
 
   .cta {
     grid-template-columns: 1fr;
@@ -1222,19 +1258,20 @@ footer {
     padding: 64px 24px 100px;
   }
 
-  .cta-heading { font-size: 47px; }
+  .cta-heading { font-size: 45px; }
 
   /* ── Services page ── */
   .page-hero { padding: 110px 24px 60px; }
   .page-hero-title { font-size: 48px; }
 
   .categories { padding: 48px 24px 0; }
-  .category-title { font-size: 34px; }
+  .category-title { font-size: 45px; }
 
   .service-row { grid-template-columns: 1fr; gap: 12px; }
   .service-row:hover { margin: 0; padding: 28px 0; }
-  .service-row-name { font-size: 23px; }
-  .service-row-right { text-align: left; }
+  .service-row-name { font-size: 30px; }
+  .service-row-right { text-align: right; }
+  .service-row-duration { margin-right: 4px; }
 
   .gift-banner {
     margin: 0 24px 60px;
@@ -1243,7 +1280,7 @@ footer {
     gap: 28px;
   }
 
-  .gift-banner-title { font-size: 32px; }
+  .gift-banner-title { font-size: 45px; }
 
   .cta-bottom {
     grid-template-columns: 1fr;
