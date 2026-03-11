@@ -13,7 +13,10 @@
 
 /* ─── RESET ─── */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 body {
   font-family: 'Jost', sans-serif;
   background: var(--warm-white);
@@ -540,7 +543,7 @@ footer {
 .hero-photo-label {
   position: absolute;
   bottom: 40px;
-  left: -40px;
+  left: 40px;
   background: white;
   padding: 20px 28px;
   box-shadow: 0 8px 40px rgba(44,31,24,0.12);
@@ -563,29 +566,6 @@ footer {
   margin-top: 2px;
 }
 
-.hero-badge {
-  position: absolute;
-  top: 48px;
-  right: 48px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  opacity: 0;
-  animation: fadeIn 0.8s 1.2s forwards, spin 20s linear infinite;
-}
-
-.hero-badge span {
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.6;
-}
 
 /* ─── SCROLL INDICATOR ─── */
 .scroll-indicator {
@@ -979,7 +959,7 @@ footer {
 
 .page-hero-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(52px, 6vw, 88px);
+  font-size: clamp(48px, 5vw, 76px);
   font-weight: 300;
   color: white;
   line-height: 1.1;
@@ -1188,17 +1168,16 @@ footer {
     max-height: 320px;
   }
 
-  .hero-title { font-size: 52px; }
+  .hero-title { font-size: 48px; }
 
   .hero-stats { gap: 24px; flex-wrap: wrap; }
 
   .stat-num { font-size: 36px; }
 
-  .hero-photo-label { left: 16px; bottom: 16px; padding: 14px 18px; }
+  .hero-photo-label { left: 16px; right: 16px; bottom: 16px; padding: 14px 18px; }
   .hero-photo-label .name { font-size: 17px; }
   .hero-photo-label .title { font-size: 11px; }
 
-  .hero-badge { display: none; }
   .scroll-indicator { display: none; }
 
   .why {
@@ -1247,7 +1226,7 @@ footer {
 
   /* ── Services page ── */
   .page-hero { padding: 110px 24px 60px; }
-  .page-hero-title { font-size: 44px; }
+  .page-hero-title { font-size: 48px; }
 
   .categories { padding: 48px 24px 0; }
   .category-title { font-size: 34px; }
