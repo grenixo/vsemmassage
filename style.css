@@ -1245,6 +1245,13 @@ footer {
 /* ══════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  nav { padding: 18px 24px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 12px; letter-spacing: 0.1em; }
+  .nav-cta { padding: 8px 16px; }
+}
+
 @media (max-width: 768px) {
 
   /* NAV */
