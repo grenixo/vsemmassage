@@ -195,7 +195,9 @@
 <section class="master">
   <div class="master-photo-wrap">
     <div class="master-photo-frame"></div>
-    <div class="master-photo"></div>
+    <div class="master-photo">
+      <img src="https://optim.tildacdn.com/tild3036-6632-4232-b064-383031333764/-/cover/520x520/center/center/-/format/webp/WhatsApp_Image_2022-.jpeg.webp" alt="Вера Смирнова — массажный мастер">
+    </div>
   </div>
   <div class="master-content">
     <div class="section-eyebrow"><span class="deco-line"></span>О мастере</div>
@@ -223,6 +225,43 @@
     </div>
   </div>
 </section>
+
+<!-- CERTS -->
+<section class="certs">
+  <div class="section-eyebrow"><span class="deco-line"></span>Сертификаты</div>
+  <div class="certs-grid">
+    <div class="cert-item" data-src="https://static.tildacdn.com/tild6439-3238-4762-a230-626364623333/WhatsApp_Image_2022-.jpeg">
+      <img src="https://static.tildacdn.com/tild6439-3238-4762-a230-626364623333/WhatsApp_Image_2022-.jpeg" alt="Сертификат">
+    </div>
+    <div class="cert-item" data-src="https://static.tildacdn.com/tild3234-6431-4634-b535-653238386338/WhatsApp_Image_2022-.jpeg">
+      <img src="https://static.tildacdn.com/tild3234-6431-4634-b535-653238386338/WhatsApp_Image_2022-.jpeg" alt="Сертификат">
+    </div>
+    <div class="cert-item" data-src="https://static.tildacdn.com/tild3836-3233-4337-a566-656135393137/WhatsApp_Image_2022-.jpeg">
+      <img src="https://static.tildacdn.com/tild3836-3233-4337-a566-656135393137/WhatsApp_Image_2022-.jpeg" alt="Сертификат">
+    </div>
+    <div class="cert-item" data-src="https://static.tildacdn.com/tild3862-6633-4733-b032-336363383838/WhatsApp_Image_2022-.jpeg">
+      <img src="https://static.tildacdn.com/tild3862-6633-4733-b032-336363383838/WhatsApp_Image_2022-.jpeg" alt="Сертификат">
+    </div>
+    <div class="cert-item" data-src="https://static.tildacdn.com/tild6135-6633-4063-b735-343332656536/WhatsApp_Image_2022-.jpeg">
+      <img src="https://static.tildacdn.com/tild6135-6633-4063-b735-343332656536/WhatsApp_Image_2022-.jpeg" alt="Сертификат">
+    </div>
+    <div class="cert-item" data-src="https://static.tildacdn.com/tild6630-6565-4938-b462-366266616132/WhatsApp_Image_2022-.jpeg">
+      <img src="https://static.tildacdn.com/tild6630-6565-4938-b462-366266616132/WhatsApp_Image_2022-.jpeg" alt="Сертификат">
+    </div>
+    <div class="cert-item" data-src="https://static.tildacdn.com/tild3936-3665-4137-b337-633762373165/WhatsApp_Image_2022-.jpeg">
+      <img src="https://static.tildacdn.com/tild3936-3665-4137-b337-633762373165/WhatsApp_Image_2022-.jpeg" alt="Сертификат">
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-overlay"></div>
+  <button class="lightbox-close">✕</button>
+  <button class="lightbox-prev">‹</button>
+  <button class="lightbox-next">›</button>
+  <img class="lightbox-img" src="" alt="">
+</div>
 
 <!-- REVIEWS -->
 <section class="reviews" id="reviews">
@@ -315,6 +354,47 @@
     <a href="https://t.me/massazhspb2022" target="_blank">Telegram</a>
   </div>
 </div>
+
+<script>
+(function() {
+  var items = Array.from(document.querySelectorAll('.cert-item'));
+  var lightbox = document.getElementById('lightbox');
+  var img = lightbox.querySelector('.lightbox-img');
+  var current = 0;
+
+  function open(index) {
+    current = index;
+    img.src = items[current].dataset.src;
+    lightbox.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lightbox.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  function prev() { open((current - 1 + items.length) % items.length); }
+  function next() { open((current + 1) % items.length); }
+
+  items.forEach(function(el, i) {
+    el.style.cursor = 'pointer';
+    el.addEventListener('click', function() { open(i); });
+  });
+
+  lightbox.querySelector('.lightbox-close').addEventListener('click', close);
+  lightbox.querySelector('.lightbox-prev').addEventListener('click', prev);
+  lightbox.querySelector('.lightbox-next').addEventListener('click', next);
+  lightbox.querySelector('.lightbox-overlay').addEventListener('click', close);
+
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  });
+})();
+</script>
 
 </body>
 </html>
