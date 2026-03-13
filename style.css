@@ -67,8 +67,8 @@ nav {
 }
 
 .nav-links a {
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--brown);
@@ -265,6 +265,85 @@ nav {
 
 /* ─── FORM ─── */
 .cta-form { display: flex; flex-direction: column; gap: 16px; }
+
+.cta-cols {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.cta-col-phone,
+.cta-col-form {
+  text-align: center;
+}
+
+.cta-col-form {
+  margin: 0 40px;
+}
+
+.cta-col-phone {
+  padding-top: 24px;
+}
+
+.cta-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0 20px;
+}
+
+.cta-divider span:first-child,
+.cta-divider span:last-child {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+}
+
+.cta-item-icon {
+  font-size: 22px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.cta-item-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.cta-item-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: white;
+}
+
+.cta-phone {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 300;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s;
+}
+
+
+.cta-phone:hover { opacity: 0.75; }
+
+.cta-col-divider {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.3);
+  align-self: center;
+}
 
 .form-input {
   background: rgba(255,255,255,0.15);
@@ -1043,9 +1122,9 @@ footer {
   background: var(--terracotta);
   padding: 100px 60px 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   gap: 80px;
-  align-items: center;
+  align-items: start;
 }
 
 /* ─── MAP SECTION ─── */
@@ -1102,9 +1181,9 @@ footer {
 }
 
 .map-hint {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.7;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.75);
   border-left: 2px solid var(--terracotta);
   padding-left: 14px;
 }
@@ -1279,6 +1358,7 @@ footer {
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse at 100% 50%, rgba(196,114,74,0.2) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .gift-banner-label {
@@ -1312,19 +1392,26 @@ footer {
   background: var(--terracotta);
   padding: 100px 60px 50px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   gap: 80px;
-  align-items: center;
+  align-items: start;
 }
 
 /* ══════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════ */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 969px) and (max-width: 1219px) {
   nav { padding: 18px 30px; }
-  .nav-links { gap: 20px; }
-  .nav-links a { font-size: 12px; letter-spacing: 0.1em; }
+  .nav-links { gap: 26px; }
+  .nav-links a { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; }
   .nav-cta { padding: 8px 16px; }
+}
+
+@media (min-width: 768px) and (max-width: 968px) {
+  nav { padding: 18px 30px; }
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 10px; font-weight: 500; letter-spacing: 0.06em; }
+  .nav-cta { padding: 8px 12px; }
 
   footer { padding: 64px 30px; }
   .footer-bottom { padding: 20px 30px; }
@@ -1357,6 +1444,7 @@ footer {
   .hamburger { display: flex; }
   .mobile-menu { display: flex; }
   .mobile-sticky { display: flex; }
+  body { padding-bottom: 68px; }
 
   /* FOOTER */
   footer {
@@ -1448,6 +1536,8 @@ footer {
   }
 
   .cta-heading { font-size: 40px; }
+  .cta-cols { grid-template-columns: 1fr; }
+  .cta-phone { font-size: 26px; }
 
   /* ── Services page ── */
   .page-hero { padding: 110px 20px 60px; }
