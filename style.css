@@ -1340,6 +1340,10 @@ footer {
 }
 
 /* ─── GIFT BANNER ─── */
+#gift {
+  scroll-margin-top: 80px;
+}
+
 .gift-banner {
   margin: 0 60px 80px;
   background: var(--dark);
